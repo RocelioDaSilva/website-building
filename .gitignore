@@ -1,3 +1,27 @@
+# Node
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VSCode
+.vscode/
+
+# Env files
+.env
+config.env
+
+# Build outputs
+dist/
+build/
+
+# Logs
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
 # Dependencies
 node_modules/
 npm-debug.log*
