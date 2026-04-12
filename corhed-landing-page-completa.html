@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corhed - Soluções Profissionais e Serviços Especializados</title>
+    <meta name="description" content="Corhed oferece soluções profissionais e serviços especializados de alta qualidade. Consultoria, gestão empresarial e muito mais.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: #003366;
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #ff0000;
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 5px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #003366 0%, #004d99 100%);
+            color: white;
+            padding: 8rem 2rem;
+            text-align: center;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #ff0000;
+            color: white;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: 2px solid #ff0000;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .cta-button:hover {
+            background-color: transparent;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255,0,0,0.3);
+        }
+
+        .cta-button-secondary {
+            background-color: transparent;
+            border: 2px solid white;
+            margin-left: 1rem;
+        }
+
+        .cta-button-secondary:hover {
+            background-color: white;
+            color: #003366;
+        }
+
+        /* Services Section */
+        .services {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #003366;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            text-align: center;
+            border-top: 4px solid #003366;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+        }
+
+        .service-card h3 {
+            color: #003366;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background-color: #ff0000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 2rem;
+            color: white;
+        }
+
+        /* About Corhed Section */
+        .about-corhed {
+            background-color: #f8f9fa;
+            padding: 4rem 2rem;
+            margin: 3rem 0;
+        }
+
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-text {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            color: #003366;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .about-list {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .about-list li {
+            color: #333;
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .about-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #ff0000;
+            font-weight: bold;
+        }
+
+        .about-image {
+            background: linear-gradient(135deg, #003366 0%, #004d99 100%);
+            height: 300px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            text-align: center;
+        }
+
+        /* Stats Section */
+        .stats {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            border-left: 4px solid #ff0000;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            color: #ff0000;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #003366;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        /* Why Choose Us Section */
+        .why-us {
+            background-color: #f8f9fa;
+            padding: 4rem 2rem;
+            margin: 3rem 0;
+        }
+
+        .why-us-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .why-us-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .why-us-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .why-us-card h4 {
+            color: #003366;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .why-us-card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* Process Section */
+        .process {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .process-timeline {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+            position: relative;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .step-number {
+            background-color: #ff0000;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin: 0 auto 1rem;
+        }
+
+        .process-step h4 {
+            color: #003366;
+            margin-bottom: 0.5rem;
+        }
+
+        .process-step p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #003366 0%, #004d99 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin: 4rem 0;
+            border-radius: 8px;
+        }
+
+        .cta-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .contact-info h3 {
+            color: #003366;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .contact-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item strong {
+            color: #003366;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item p {
+            color: #666;
+            margin: 0;
+        }
+
+        .contact-item a {
+            color: #ff0000;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Form Styling */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #003366;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #003366;
+            box-shadow: 0 0 5px rgba(0,51,102,0.2);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-submit {
+            background-color: #ff0000;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+
+        .form-submit:hover {
+            background-color: #cc0000;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background-color: #f8f9fa;
+            padding: 4rem 2rem;
+            margin: 3rem 0;
+        }
+
+        .testimonials-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-left: 4px solid #ff0000;
+        }
+
+        .stars {
+            color: #ff0000;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .testimonial-text {
+            color: #666;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            color: #003366;
+            font-weight: 600;
+        }
+
+        .testimonial-role {
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #ff0000;
+        }
+
+        .footer-copyright {
+            color: #ccc;
+            font-size: 0.9rem;
+            border-top: 1px solid #004d99;
+            padding-top: 1rem;
+            margin-top: 1rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .service-card {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .service-card:nth-child(1) { animation-delay: 0.1s; }
+        .service-card:nth-child(2) { animation-delay: 0.2s; }
+        .service-card:nth-child(3) { animation-delay: 0.3s; }
+        .service-card:nth-child(4) { animation-delay: 0.4s; }
+        .service-card:nth-child(5) { animation-delay: 0.5s; }
+        .service-card:nth-child(6) { animation-delay: 0.6s; }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+                flex-direction: column;
+                gap: 1rem;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background-color: #003366;
+                padding: 1rem;
+                z-index: 99;
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .cta-button-secondary {
+                display: block;
+                margin: 1rem 0 0;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-text {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .why-us-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .hero {
+                padding: 4rem 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .why-us-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav a {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">CORHED</div>
+            <nav id="nav-menu">
+                <a href="#services">Serviços</a>
+                <a href="#about">Sobre</a>
+                <a href="#why-us">Por Que Nos Escolher</a>
+                <a href="#contact">Contato</a>
+            </nav>
+            <div class="mobile-menu" id="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Soluções Profissionais Para Seu Negócio</h1>
+            <p>Consultoria estratégica, gestão empresarial e soluções especializadas que transformam sua empresa</p>
+            <a href="#contact" class="cta-button">Fale Conosco Agora</a>
+            <a href="#services" class="cta-button cta-button-secondary">Ver Serviços</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <h2 class="section-title">Nossos Serviços</h2>
+        <p class="section-subtitle">Oferecemos soluções profissionais customizadas para cada desafio do seu negócio</p>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">📊</div>
+                <h3>Consultoria Estratégica</h3>
+                <p>Desenvolvemos estratégias personalizadas para otimizar seus processos e maximizar resultados através de análise profunda.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">💼</div>
+                <h3>Gestão Empresarial</h3>
+                <p>Oferecemos soluções completas de gestão para melhorar a eficiência operacional e a produtividade da organização.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🎯</div>
+                <h3>Assessoria Profissional</h3>
+                <p>Especialistas em diversas áreas para fornecer orientação técnica e suport na tomada de decisões estratégicas.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📈</div>
+                <h3>Análise de Mercado</h3>
+                <p>Utilizamos metodologias avançadas para analisar tendências e identificar oportunidades de crescimento.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🔧</div>
+                <h3>Implementação de Soluções</h3>
+                <p>Executamos projetos complexos com precisão, garantindo implementação conforme planejado e dentro do prazo.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🤝</div>
+                <h3>Parcerias Estratégicas</h3>
+                <p>Facilitamos parcerias com outras empresas para ampliar suas capacidades e alcançar novos mercados.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Corhed -->
+    <section class="about-corhed" id="about">
+        <div class="about-content">
+            <h2 class="section-title">Sobre a Corhed</h2>
+            <div class="about-text">
+                <div>
+                    <h3>Experiência e Inovação em Serviços Profissionais</h3>
+                    <p>A Corhed é uma empresa líder em soluções profissionais e consultoria estratégica. Com anos de experiência no mercado, ajudamos empresas de todos os tamanhos a alcançar seus objetivos através de estratégias comprovadas e equipes altamente qualificadas.</p>
+                    <p>Nossa abordagem é centrada no cliente, garantindo que cada solução seja customizada para suas necessidades específicas e desafios únicos.</p>
+                    <ul class="about-list">
+                        <li>Equipe altamente qualificada com especialistas</li>
+                        <li>Metodologias comprovadas e inovadoras</li>
+                        <li>Suporte contínuo ao cliente</li>
+                        <li>Compromisso com excelência</li>
+                        <li>Resultados mensuráveis</li>
+                    </ul>
+                </div>
+                <div class="about-image">
+                    👥 CORHED
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <h2 class="section-title">Nosso Impacto</h2>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">Clientes Atendidos</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">10+</div>
+                <div class="stat-label">Anos de Experiência</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">98%</div>
+                <div class="stat-label">Taxa de Satisfação</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Profissionais Experientes</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-us" id="why-us">
+        <div class="why-us-content">
+            <h2 class="section-title">Por Que Escolher a Corhed</h2>
+            <div class="why-us-grid">
+                <div class="why-us-card">
+                    <h4>✓ Experiência Comprovada</h4>
+                    <p>10+ anos atuando no mercado com histórico de sucesso</p>
+                </div>
+                <div class="why-us-card">
+                    <h4>✓ Equipe Especializada</h4>
+                    <p>50+ profissionais especialistas em suas áreas</p>
+                </div>
+                <div class="why-us-card">
+                    <h4>✓ Soluções Customizadas</h4>
+                    <p>Cada projeto desenvolvido conforme suas necessidades</p>
+                </div>
+                <div class="why-us-card">
+                    <h4>✓ Resultados Comprovados</h4>
+                    <p>Métricas claras e acompanhamento contínuo</p>
+                </div>
+                <div class="why-us-card">
+                    <h4>✓ Suporte Permanente</h4>
+                    <p>Apoio contínuo mesmo após conclusão dos projetos</p>
+                </div>
+                <div class="why-us-card">
+                    <h4>✓ Inovação Constante</h4>
+                    <p>Uso de tecnologias e metodologias de ponta</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process">
+        <h2 class="section-title">Nosso Processo</h2>
+        <p class="section-subtitle">Metodologia comprovada para garantir sucesso em cada projeto</p>
+        <div class="process-timeline">
+            <div class="process-step">
+                <div class="step-number">1</div>
+                <h4>Diagnóstico</h4>
+                <p>Análise profunda dos desafios e oportunidades do seu negócio</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">2</div>
+                <h4>Estratégia</h4>
+                <p>Desenvolvimento de plano estratégico personalizado</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">3</div>
+                <h4>Implementação</h4>
+                <p>Execução eficiente e monitoramento constante</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">4</div>
+                <h4>Otimização</h4>
+                <p>Ajustes e melhorias contínuas para máximos resultados</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="testimonials-content">
+            <h2 class="section-title">O Que Nossos Clientes Dizem</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"A Corhed transformou completamente nossa operação. Os resultados superaram nossas expectativas."</p>
+                    <p class="testimonial-author">João Silva</p>
+                    <p class="testimonial-role">CEO, Empresa XYZ</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Profissionalismo e eficiência em cada etapa. Recomendo fortemente os serviços da Corhed."</p>
+                    <p class="testimonial-author">Maria Santos</p>
+                    <p class="testimonial-role">Gerente de Projetos, ABC Corp</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Equipe atenciosa e soluções inovadoras. A melhor decisão foi contratar a Corhed."</p>
+                    <p class="testimonial-author">Carlos Oliveira</p>
+                    <p class="testimonial-role">Diretor, TechSolutions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Pronto para Transformar Seu Negócio?</h2>
+        <p>Entre em contato conosco hoje e descubra como podemos ajudar sua empresa a alcançar novos patamares de sucesso</p>
+        <a href="#contact" class="cta-button">Agende uma Consulta</a>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2 class="section-title">Entre em Contato</h2>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>Informações de Contato</h3>
+                
+                <div class="contact-item">
+                    <strong>📧 Email</strong>
+                    <p><a href="mailto:contato@corhed.com">contato@corhed.com</a></p>
+                </div>
+
+                <div class="contact-item">
+                    <strong>📞 Telefone</strong>
+                    <p><a href="tel:+55-11-3000-0000">(11) 3000-0000</a></p>
+                </div>
+
+                <div class="contact-item">
+                    <strong>📍 Endereço</strong>
+                    <p>São Paulo, SP<br>Brasil</p>
+                </div>
+
+                <div class="contact-item">
+                    <strong>🕐 Horário de Funcionamento</strong>
+                    <p>Segunda a Sexta: 9h às 18h<br>Sábado: 9h às 13h<br>Domingo: Fechado</p>
+                </div>
+            </div>
+
+            <div>
+                <h3 style="color: #003366; margin-bottom: 1.5rem;">Envie uma Mensagem</h3>
+                <form method="POST" action="#" onsubmit="handleSubmit(event)">
+                    <div class="form-group">
+                        <label for="name">Nome Completo *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-mail *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="company">Empresa</label>
+                        <input type="text" id="company" name="company">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="service">Serviço de Interesse *</label>
+                        <select id="service" name="service" required>
+                            <option value="">Selecione um serviço</option>
+                            <option value="consultoria">Consultoria Estratégica</option>
+                            <option value="gestao">Gestão Empresarial</option>
+                            <option value="assessoria">Assessoria Profissional</option>
+                            <option value="analise">Análise de Mercado</option>
+                            <option value="implementacao">Implementação de Soluções</option>
+                            <option value="parceria">Parcerias Estratégicas</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Mensagem *</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+
+                    <button type="submit" class="form-submit">Enviar Mensagem</button>
+                </form>
+                <p style="color: #666; font-size: 0.9rem; margin-top: 1rem; text-align: center;">
+                    ✓ Responderemos em até 24 horas
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#services">Serviços</a>
+                <a href="#about">Sobre</a>
+                <a href="legal/privacy-policy.html">Política de Privacidade</a>
+                <a href="legal/terms-and-conditions.html">Termos de Uso</a>
+            </div>
+            <div class="footer-copyright">
+                &copy; 2026 Corhed - Soluções Profissionais. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const navMenu = document.getElementById('nav-menu');
+
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+        }
+
+        // Close menu when link is clicked
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Form submission handler
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const company = document.getElementById('company').value;
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
+
+            // Here you would normally send the data to a server
+            console.log('Form Data:', { name, email, company, service, message });
+
+            // Show success message
+            alert('Obrigado por entrar em contato! Responderemos em breve.');
+            event.target.reset();
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

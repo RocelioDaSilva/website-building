@@ -555,3 +555,25 @@ footer {
         font-size: 0.9rem;
     }
 }
+
+/* === Page CTA === */
+.page-cta-heading {
+    color: #003366;
+    margin-bottom: 1rem;
+}
+
+.page-cta-subtitle {
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.pricing-note {
+    color: #666;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* === 404 Error Page Footer === */
+.error-page ~ footer .footer-bottom {
+    text-align: center;
+}

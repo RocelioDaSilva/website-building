@@ -61,6 +61,8 @@
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+
     <header role="banner">
         <nav aria-label="Main navigation">
             <a href="index.html" class="logo" aria-label="YourBusiness Home">YourBusiness</a>
@@ -77,7 +79,7 @@
         </nav>
     </header>
 
-    <main>
+    <main id="main-content">
         <div class="error-page">
             <div class="error-content">
                 <h1>404</h1>
@@ -93,7 +95,7 @@
     </main>
 
     <footer role="contentinfo">
-        <div class="footer-bottom" style="text-align:center;">
+        <div class="footer-bottom">
             <p>&copy; 2026 YourBusiness. All rights reserved.</p>
             <p>
                 <a href="legal/privacy-policy.html">Privacy</a> &middot;
@@ -102,6 +104,14 @@
             </p>
         </div>
     </footer>
+
+    <div id="cookieBanner" role="dialog" aria-label="Cookie consent">
+        <p>We use cookies to improve your experience. Read our <a href="legal/cookie-policy.html">Cookie Policy</a>.</p>
+        <div class="cookie-actions">
+            <button id="cookieAccept" class="cookie-accept">Accept</button>
+            <button id="cookieDecline" class="cookie-decline">Decline</button>
+        </div>
+    </div>
 
     <script src="assets/js/scripts.js"></script>
 </body>
