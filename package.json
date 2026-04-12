@@ -1,7 +1,7 @@
 {
-  "name": "corhed-landing-page",
+  "name": "yourbusiness-website",
   "version": "1.0.0",
-  "description": "Landing page profissional da Corhed - Soluções especializadas para instituições bancárias",
+  "description": "Professional business website — consulting, analytics, technical support, and digital solutions.",
   "main": "index.html",
   "scripts": {
     "start": "npx http-server . -p 3000 -c-1",
@@ -12,14 +12,13 @@
     "setup": "npm install && echo 'Setup complete! Run npm run preview to view the site.'"
   },
   "keywords": [
-    "landing-page",
-    "banco",
-    "pagamentos",
-    "corhed",
-    "fintech",
-    "b2b"
+    "business",
+    "consulting",
+    "analytics",
+    "professional-services",
+    "digital-solutions"
   ],
-  "author": "Corhed",
+  "author": "YourBusiness",
   "license": "MIT",
   "devDependencies": {
     "http-server": "^14.1.1",
@@ -27,9 +26,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/corhed/corhed-landing-page.git"
+    "url": "https://github.com/RocelioDaSilva/website-building.git"
   },
-  "homepage": "https://corhed.com",
+  "homepage": "https://yourbusiness.com",
   "engines": {
     "node": ">=14.0.0"
   }

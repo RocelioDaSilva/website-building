@@ -14,7 +14,7 @@ Allow: /legal/terms-and-conditions.html
 Allow: /legal/cookie-policy.html
 
 # Block documentation/config files
-Disallow: /*.md$
+Disallow: /*.md
 Disallow: /config.env
 Disallow: /server.ps1
 Disallow: /setup.bat
