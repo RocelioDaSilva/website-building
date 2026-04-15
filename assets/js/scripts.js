@@ -53,6 +53,7 @@
             // Show banner after a small delay for smooth appearance
             setTimeout(function () {
                 cookieBanner.classList.add('visible');
+                cookieBanner.setAttribute('aria-modal', 'true');
             }, 1000);
         }
 
@@ -60,6 +61,7 @@
             cookieAccept.addEventListener('click', function () {
                 localStorage.setItem('cookieConsent', 'accepted');
                 cookieBanner.classList.remove('visible');
+                cookieBanner.removeAttribute('aria-modal');
             });
         }
 
@@ -67,6 +69,7 @@
             cookieDecline.addEventListener('click', function () {
                 localStorage.setItem('cookieConsent', 'declined');
                 cookieBanner.classList.remove('visible');
+                cookieBanner.removeAttribute('aria-modal');
             });
         }
     }
@@ -110,24 +113,40 @@
             }
 
             // Simulate success (replace with actual endpoint when ready)
-            if (formMessage) {
-                formMessage.className = 'form-message success';
-                formMessage.textContent = '✓ Thank you! Your message has been sent. We\'ll get back to you within 24 hours.';
+            var submitBtn = contactForm.querySelector('.submit-btn');
+            if (submitBtn) {
+                submitBtn.classList.add('loading');
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Sending...';
             }
 
-            contactForm.reset();
-
-            // Hide message after 5 seconds
+            // Simulate network delay for realistic UX
             setTimeout(function () {
-                if (formMessage) formMessage.style.display = 'none';
-            }, 5000);
+                if (formMessage) {
+                    formMessage.className = 'form-message success';
+                    formMessage.textContent = '✓ Thank you! Your message has been sent. We\'ll get back to you within 24 hours.';
+                }
 
-            // Track in Google Analytics if available
-            if (window.gtag) {
-                gtag('event', 'form_submission', {
-                    event_category: 'contact_form'
-                });
-            }
+                contactForm.reset();
+
+                if (submitBtn) {
+                    submitBtn.classList.remove('loading');
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Send Message';
+                }
+
+                // Hide message after 8 seconds
+                setTimeout(function () {
+                    if (formMessage) formMessage.style.display = 'none';
+                }, 8000);
+
+                // Track in Google Analytics if available
+                if (window.gtag) {
+                    gtag('event', 'form_submission', {
+                        event_category: 'contact_form'
+                    });
+                }
+            }, 1500);
         });
 
         // Clear field errors on input
@@ -217,5 +236,47 @@
             link.setAttribute('aria-current', 'page');
         }
     });
+
+    // === Back to Top Button ===
+    var backToTop = document.querySelector('.back-to-top');
+    if (backToTop) {
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 400) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        }, { passive: true });
+
+        backToTop.addEventListener('click', function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
+    // === Scroll Reveal Animations ===
+    var animatedElements = document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right');
+    if (animatedElements.length > 0 && 'IntersectionObserver' in window) {
+        var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        animatedElements.forEach(function (el) {
+            observer.observe(el);
+        });
+    }
+
+    // === Phone Number Validation ===
+    var phoneField = document.getElementById('phone');
+    if (phoneField) {
+        phoneField.addEventListener('input', function () {
+            // Allow only digits, spaces, dashes, parentheses, plus
+            this.value = this.value.replace(/[^\d\s\-\(\)\+]/g, '');
+        });
+    }
 
 })();
