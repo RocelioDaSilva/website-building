@@ -1,19 +1,136 @@
-# 🌐 Corhed Landing Page
+# Website Building — Client Projects Repository
 
-Landing page profissional da **Corhed** - Especializada em soluções de gestão de meios de pagamento eletrónica e venda de consumíveis para instituições bancárias.
+Professional website projects and reusable templates. Contains two clients: **Corhed** (real B2B banking client, Portuguese) and **YourBusiness** (English template).
 
-## 📋 Visão Geral
+**Live demo:** https://roceliodasilva.github.io/website-building/
 
-Este projeto contém uma landing page moderna e responsiva desenvolvida especificamente para o setor bancário, com foco em conversão de leads B2B e apresentação profissional dos serviços da Corhed.
+---
 
-### ✨ Características
+## Repository Structure
 
-- 🎨 Design corporativo com paleta de cores personalizada
-- 📱 Totalmente responsivo (mobile-first)
-- ⚡ Performance otimizada
-- 🔒 SEO e acessibilidade implementados
-- 💼 Foco em instituições bancárias
-- 🌍 Conteúdo em português brasileiro
+```
+website building/
+├── corhed/               # Corhed client — landing page (pt-BR)
+│   └── index.html        # Best merged version (banking-specific content)
+│
+├── template/             # Reusable YourBusiness template (English)
+│   ├── index.html
+│   ├── about.html
+│   ├── services.html
+│   ├── contact.html
+│   ├── faq.html
+│   ├── 404.html
+│   ├── mobile-landing.html
+│   └── legal/
+│       ├── privacy-policy.html
+│       ├── terms-and-conditions.html
+│       └── cookie-policy.html
+│
+├── assets/               # Shared assets (used by template)
+│   ├── css/styles.css
+│   ├── js/scripts.js
+│   └── img/
+│       ├── favicon.svg
+│       ├── og-image.svg
+│       └── corhed-logo.png
+│
+├── docs/                 # Merged documentation
+│   ├── CORHED-CLIENT.md     # Design specs + interview questions + personalization guide
+│   ├── SETUP-GUIDES.md      # Domain, hosting, email, SEO, social media
+│   ├── LAUNCH-CHECKLIST.md  # Pre-launch checklists + content templates
+│   └── AI-TOOLS.md          # AI website builders + prompts
+│
+└── [root config files]   # package.json, robots.txt, sitemap.xml, server.ps1, etc.
+```
+
+---
+
+## Quick Start
+
+### View locally
+
+**Option 1 — Open file directly:**
+Double-click `corhed/index.html` or `template/index.html` in File Explorer.
+
+**Option 2 — Local server (recommended):**
+```powershell
+# PowerShell server on port 8000
+.\server.ps1
+```
+Then open: http://localhost:8000/corhed/
+
+**Option 3 — npm:**
+```bash
+npm install
+npm start
+```
+
+### Deploy to GitHub Pages
+```bash
+# Push to main (auto-deploys gh-pages if configured)
+git add -A
+git commit -m "Update"
+git push origin main
+```
+
+---
+
+## Client: Corhed
+
+**Company:** Corhed - Comércio e Serviços LDA  
+**Specialty:** Electronic payment management + banking consumables  
+**File:** `corhed/index.html`  
+**Live:** https://roceliodasilva.github.io/website-building/
+
+**Brand colors:**
+- Primary: `#1F4E79` (navy blue)
+- Accent: `#C00000` (dark red)
+- Body: `#7A7A7A` (gray)
+
+**To personalize:** See `docs/CORHED-CLIENT.md`
+
+---
+
+## Template: YourBusiness
+
+English B2B template with 7 pages + legal pages. Ready to fork and rebrand for any new client.
+
+**Assets path from template files:** `../assets/` (CSS, JS, images)
+
+**To use for a new client:**
+1. Copy `template/` folder and rename
+2. Update brand colors in `assets/css/styles.css`
+3. Replace all placeholder text and images
+4. Follow `docs/LAUNCH-CHECKLIST.md`
+
+---
+
+## Documentation
+
+| File | Contents |
+|------|----------|
+| `docs/CORHED-CLIENT.md` | Corhed design specs, 30-question client interview, personalization guide, form integration |
+| `docs/SETUP-GUIDES.md` | Domain registration, hosting, email (Google Workspace / M365), SEO, social media |
+| `docs/LAUNCH-CHECKLIST.md` | 5-phase build checklist, pre-launch QA, content templates, email templates |
+| `docs/AI-TOOLS.md` | AI website builders comparison, Lovable prompt, Claude/GPT prompt, free templates |
+
+---
+
+## How to Open on Phone (Client Instructions)
+
+**Option 1 — Direct file (offline):**
+Transfer the `corhed/` folder to phone via USB or Google Drive, then open `index.html` in mobile browser.
+
+**Option 2 — GitHub Pages (online, zero setup):**
+Share this link: https://roceliodasilva.github.io/website-building/
+
+**Option 3 — Local server on same WiFi:**
+```powershell
+.\server.ps1
+```
+Open on phone: `http://[YOUR-PC-IP]:8000/corhed/`
+
+---
 
 ## 🚀 Instalação e Execução
 
@@ -25,21 +142,14 @@ Este projeto contém uma landing page moderna e responsiva desenvolvida especifi
 ### Instalação Automática
 
 #### Windows
-1. **Execute o script de instalação**
-   ```cmd
-   setup.bat
-   ```
+```cmd
+setup.bat
+```
 
 #### macOS/Linux
-1. **Dê permissão de execução ao script**
-   ```bash
-   chmod +x setup.sh
-   ```
-
-2. **Execute o script de instalação**
-   ```bash
-   ./setup.sh
-   ```
+```bash
+chmod +x setup.sh && ./setup.sh
+```
 
 ### Instalação Manual
 
