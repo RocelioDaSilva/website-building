@@ -4,10 +4,13 @@ $listener = New-Object System.Net.HttpListener
 $listener.Prefixes.Add($url)
 $listener.Start()
 
-Write-Host "Server running at http://localhost:8000"
-Write-Host "Press Ctrl+C to stop the server"
+# Determine document root dynamically: prefer the script folder, fall back to current location
+$docRoot = $PSScriptRoot
+if ([string]::IsNullOrEmpty($docRoot)) { $docRoot = (Get-Location).Path }
 
-$docRoot = "c:\Users\PCGAME\Desktop\website building"
+Write-Host "Server running at $url"
+Write-Host "Serving files from: $docRoot"
+Write-Host "Press Ctrl+C to stop the server"
 
 # MIME type mapping
 $mimeTypes = @{

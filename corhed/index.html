@@ -10,7 +10,7 @@
     <meta property="og:title" content="Corhed - Gestão de Meios de Pagamento e Soluções para Bancos">
     <meta property="og:description" content="Soluções especializadas em gestão de meios de pagamento eletrónica e venda de consumíveis para bancos e instituições financeiras.">
     <meta property="og:type" content="website">
-    <link rel="icon" href="corhed-logo.png" type="image/png">
+    <link rel="icon" href="../assets/img/corhed-logo.png" type="image/png">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -366,8 +366,9 @@
             </div>
             <div class="service-card">
                 <div class="service-icon">📊</div>
-                <h3>Análise e Relatórios</h3>
-                <p>Relatórios detalhados de transações, análise de performance e métricas de eficiência operacional.</p>
+                <h3>Análise e Produção de relatórios</h3>
+                <p>Relatórios detalhados de transações.</p>
+                <p>Análise de performance e métricas de eficiência operacional.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">🔧</div>
@@ -512,7 +513,7 @@
                             <option value="pagamento">Gestão de Meios de Pagamento Eletrónica</option>
                             <option value="consumiveis">Venda de Consumíveis</option>
                             <option value="seguranca">Segurança e Compliance</option>
-                            <option value="analise">Análise e Relatórios</option>
+                            <option value="analise">Análise e Produção de relatórios</option>
                             <option value="manutencao">Manutenção e Suporte</option>
                             <option value="consultoria">Consultoria Estratégica</option>
                         </select>
@@ -573,18 +574,58 @@
             });
         });
 
-        // Form submit
-        function handleSubmit(e) {
+        // Form submit — POST to backend API
+        async function handleSubmit(e) {
             e.preventDefault();
-            alert('Obrigado por entrar em contato! Responderemos em breve.');
-            e.target.reset();
+            const form = e.target;
+            const data = {
+                name: form.name.value,
+                email: form.email.value,
+                company: form.company.value,
+                service: form.service.value,
+                message: form.message.value
+            };
+            try {
+                const res = await fetch('http://localhost:3001/api/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                const json = await res.json();
+                if (res.ok) {
+                    alert('Obrigado por entrar em contato! Responderemos em breve.');
+                    form.reset();
+                } else {
+                    alert('Erro ao enviar: ' + (json.error || res.statusText));
+                }
+            } catch (err) {
+                alert('Erro de rede: ' + err.message);
+            }
         }
 
-        // Newsletter
-        function handleNewsletter(e) {
+        // Newsletter — POST to backend API
+        async function handleNewsletter(e) {
             e.preventDefault();
-            alert('Inscrição realizada com sucesso!');
-            e.target.reset();
+            const form = e.target;
+            const input = form.querySelector('input[type="email"]');
+            const email = input ? input.value : '';
+            if (!email) { alert('Por favor informe o seu e-mail.'); return; }
+            try {
+                const res = await fetch('http://localhost:3001/api/newsletter', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email })
+                });
+                const json = await res.json();
+                if (res.ok) {
+                    alert('Inscrição realizada com sucesso!');
+                    form.reset();
+                } else {
+                    alert('Erro ao inscrever: ' + (json.error || res.statusText));
+                }
+            } catch (err) {
+                alert('Erro de rede: ' + err.message);
+            }
         }
     </script>
 </body>

@@ -26,6 +26,9 @@ pids
 *.seed
 *.pid.lock
 
+# SQLite DB (local dev)
+data/*.sqlite
+
 # Coverage directory used by tools like istanbul
 coverage/
 
